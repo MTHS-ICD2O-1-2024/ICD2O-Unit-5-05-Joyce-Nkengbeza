@@ -8,19 +8,76 @@
 
 function calculate() {
   // input
-  const age = document.getElementById("age").value;
-  const tuesday = document.getElementById("tuesday").checked;
-  const thursday = document.getElementById("thursday").checked;
+ const lengthAString = prompt("length-a")
+
+const lengthBString = prompt("length-b")
+
+const lengthCString = prompt("length-c")
+
+
+
+const lengtha = parseFloat(lengthAString)
+
+const lengthb = parseFloat(lengthBString)
+
+const lengthc = parseFloat(lengthCString)
+
+
+
+// using the cosine law
+
+const angleA = Math.acos((lengthB**2 + lengthC**2 - lengthA**2) / (2 * lengthB * lengthC)) * (180/Math.PI)
+
+const angleB = Math.acos((lengthC**2 + lengthA**2 - lengthB**2) / (2 * lengthC * lengthA)) * (180/Math.PI)
+
+const angleC = Math.acos((lengthA**2 + lengthB**2 - lengthC**2) / (2 * lengthA * lengthB)) * (180/Math.PI)
+
+
+
+const sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
+
+
+
+console.log(angleA)
+
+console.log(angleB)
+
+console.log(angleC)
+
+console.log(sumOfAngles)
+
+
+
+  const lengthA = document.getElementById("length-a").value;
+  const lengthB= document.getElementById("length-b").value;
+  const lengthC = document.getElementById("lengtb-c").value;
 
   // process
-    if (tuesday || thursday || (age >= 12 && age <=21)) {
-    // output
+    if (sumOfAngle == 180) {
+      if (lengthA == lengthB == lengthC) {
+    // output 
     document.getElementById("results").innerHTML =
-      "<p>You can recieve a student discount.</p>";
+      "<p>Type:Equilateral</p>";
   }
-
-  else {
+    // process
+  else if (sumOfAngle == 180){
+  (lengthA == lengthB !== lengthC)
+  //output
+  document.getElementById("results").innerHTML = 
+  "<p>Type:Isosceles</p>";
+  }
+  //process
+  else if (sumOfAngle == 180){
+  (lengthA !== lengthB !== lengthC)
+  
+  //output 
+  document.getElementById("results").innerHTML =
+      "<p>Type:Scalene</p>";
+  }
+  }
+  //output
+  else{
     document.getElementById("results").innerHTML =
-      "<p>You have to pay regular price.</p>";
+      "<p>This is not a triangle!!!</p>";
   }
 }
