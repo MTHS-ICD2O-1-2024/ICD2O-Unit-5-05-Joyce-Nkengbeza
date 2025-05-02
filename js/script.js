@@ -8,22 +8,7 @@
 
 function calculate() {
   // input
- const lengthAString = prompt("length-a")
-
-const lengthBString = prompt("length-b")
-
-const lengthCString = prompt("length-c")
-
-
-
-const lengtha = parseFloat(lengthAString)
-
-const lengthb = parseFloat(lengthBString)
-
-const lengthc = parseFloat(lengthCString)
-
-
-
+  
 // using the cosine law
 
 const angleA = Math.acos((lengthB**2 + lengthC**2 - lengthA**2) / (2 * lengthB * lengthC)) * (180/Math.PI)
